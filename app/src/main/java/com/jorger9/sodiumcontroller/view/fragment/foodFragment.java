@@ -12,10 +12,10 @@ import com.jorger9.sodiumcontroller.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class foodFragment extends Fragment {
+public class FoodFragment extends Fragment {
 
 
-    public foodFragment() {
+    public FoodFragment() {
         // Required empty public constructor
     }
 

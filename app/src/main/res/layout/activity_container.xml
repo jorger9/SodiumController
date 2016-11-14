@@ -6,8 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.jorger9.sodiumcontroller.view.ContainerActivity">
 
-    <include layout="@layout/bottombar">
+    <FrameLayout
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/bottombar_height"/>
 
-    </include>
+    <include layout="@layout/bottombar"></include>
 
 </RelativeLayout>
