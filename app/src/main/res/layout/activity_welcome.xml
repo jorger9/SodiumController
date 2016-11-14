@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.jorger9.sodiumcontroller.WelcomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:theme="@style/TextViewWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/app_name"
+                />
+
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:fillViewport="true"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="36dp"
+                >
+
+                <TextView
+                    android:id="@+id/textViewChoose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/restrictionChoose"
+                    android:textSize="20sp"
+                    android:layout_marginRight="10dp"
+                    />
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/lowRestriction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/low_restriction"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="6dp"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/midRestriction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mid_restriction"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_below="@id/lowRestriction"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/highRestriction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/high_restriction"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_below="@id/midRestriction"
+                        />
+
+                </RadioGroup>
+                <Button
+                    android:id="@+id/welcomeButton"
+                    android:theme="@style/RaisedButtonDark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_button_welcome"
+                    android:onClick="goContainerActivity"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/infoRestrictionT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/info_text_size"
+                        android:text="@string/info_text"
+                        />
+                    <TextView
+                        android:id="@+id/infoRestrictionC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/info_text_size"
+                        android:text="@string/info_click"
+                        android:onClick="goShowInfo"
+                        android:textColor="@color/colorAccent"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

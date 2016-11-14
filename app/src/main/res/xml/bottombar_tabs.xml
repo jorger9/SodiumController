@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/eat"
+        title="@string/tab_eat"
+        barColorWhenSelected ="@color/colorPrimaryDark"
+        icon="@drawable/ic_eat"
+        />
+    <tab
+        id="@+id/search"
+        title="@string/tab_search"
+        barColorWhenSelected ="@color/colorPrimaryDark"
+        icon="@drawable/ic_search"
+        />
+    <tab
+        id="@+id/stadistics"
+        title="@string/tab_stadistics"
+        barColorWhenSelected ="@color/colorPrimaryDark"
+        icon="@drawable/ic_stadistics"
+        />
+</tabs>
