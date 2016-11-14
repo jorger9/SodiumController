@@ -12,10 +12,10 @@ import com.jorger9.sodiumcontroller.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StadisticsFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
 
-    public StadisticsFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class StadisticsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stadistics, container, false);
+        return inflater.inflate(R.layout.fragment_eat, container, false);
     }
 
 }
