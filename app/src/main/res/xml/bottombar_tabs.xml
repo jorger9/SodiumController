@@ -3,19 +3,19 @@
     <tab
         id="@+id/home"
         title="@string/tab_home"
-        barColorWhenSelected ="@color/colorPrimaryDark"
+        barColorWhenSelected ="@color/colorPrimary"
         icon="@drawable/ic_home"
         />
     <tab
         id="@+id/food"
         title="@string/tab_food"
-        barColorWhenSelected ="@color/colorPrimaryDark"
+        barColorWhenSelected ="@color/colorPrimary"
         icon="@drawable/ic_food"
         />
     <tab
         id="@+id/history"
         title="@string/tab_history"
-        barColorWhenSelected ="@color/colorPrimaryDark"
+        barColorWhenSelected ="@color/colorPrimary"
         icon="@drawable/ic_history"
         />
 </tabs>

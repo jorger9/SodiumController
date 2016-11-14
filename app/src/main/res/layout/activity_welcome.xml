@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.7"
-            android:background="@color/colorPrimaryDark">
+            android:background="@color/colorPrimary">
 
             <TextView
                 android:theme="@style/TextViewWhite"

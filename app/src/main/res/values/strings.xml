@@ -11,7 +11,7 @@
     <string name="low_restriction_info">Restricción leve: entre 900 - 2100mg de consumo de Sodio al día.</string>
     <string name="mid_restriction_info">Restrincción moderada: entre 500 - 900mg de consumo de Sodio al día.</string>
     <string name="high_restriction_info">Restricción severa: menos de 500 mg de consumo de Sodio al día.</string>
-    <string name="tab_Home">Inicio</string>
+    <string name="tab_home">Inicio</string>
     <string name="tab_food">Alimentos</string>
     <string name="tab_history">Historial</string>
 
