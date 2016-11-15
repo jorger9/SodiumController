@@ -6,6 +6,8 @@
     android:fitsSystemWindows="true"
     tools:context="com.jorger9.sodiumcontroller.view.fragment.HomeFragment">
 
+    <include layout="@layout/actionbar_toolbar"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,14 +15,55 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/bar_title"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            />
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_marginRight="5dp" />
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/begin_bar_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/begin_bar_indicator"
+                android:layout_alignParentLeft="true"
+                />
+            <TextView
+                android:id="@+id/end_bar_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/end_bar_indicator"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
 
     </LinearLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/plus"
+        />
 </android.support.design.widget.CoordinatorLayout>
 

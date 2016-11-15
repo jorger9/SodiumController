@@ -1,10 +1,12 @@
 package com.jorger9.sodiumcontroller.view;
 
+import android.os.Handler;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 import com.jorger9.sodiumcontroller.R;
 import com.jorger9.sodiumcontroller.view.fragment.FoodFragment;
@@ -15,6 +17,9 @@ import com.roughike.bottombar.OnTabSelectListener;
 
 public class ContainerActivity extends AppCompatActivity {
 
+    private ProgressBar mProgress;
+    private int mProgressStatus = 50;
+    private Handler mHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +28,10 @@ public class ContainerActivity extends AppCompatActivity {
         BottomBar bottomBar = (BottomBar) findViewById(R.id.bottombar);
 
         bottomBar.setDefaultTab(R.id.home);
+
+        mProgress = (ProgressBar) findViewById(R.id.progress_bar);
+
+
 
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -48,4 +57,5 @@ public class ContainerActivity extends AppCompatActivity {
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .addToBackStack(null).commit();
     }
+
 }
