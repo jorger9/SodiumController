@@ -34,6 +34,15 @@ public final class DBContract {
                 SodiumRestriction.COLUMN_RESTRICTION_NAME + TEXT_TYPE + " )";
     }
 
+    public static final String loadRestrinctionsData( ){
+
+        return "INSERT INTO " + SodiumRestriction.TABLE_NAME + "(" +
+                SodiumRestriction.COLUMN_LOWER_LIMIT + COMMA_SEP +
+                SodiumRestriction.COLUMN_UPPER_LIMIT + COMMA_SEP +
+                SodiumRestriction.COLUMN_RESTRICTION_NAME + ") "+
+                "VALUES (" + "900, 2100, 'Restricción leve'" + ")";
+    }
+
     public static final String deleteTableRestrictions(){
         return "DROP TABLE IF EXISTS " + SodiumRestriction.TABLE_NAME;
     }
@@ -123,8 +132,8 @@ public final class DBContract {
                 DailyFood._ID + " INTEGER PRIMARY KEY," +
                 DailyFood.COLUMN_FOOD_QUANTITY + REAL_TYPE + COMMA_SEP +
                 DailyFood.COLUMN_SODIUM_MG_QUANTITY + REAL_TYPE + COMMA_SEP +
-                DailyFood.COLUMN_DATETIME + INTEGER_TYPE + COMMA_SEP +
-                DailyFood.COLUMN_FOOD_ID + TEXT_TYPE + COMMA_SEP +
+                DailyFood.COLUMN_DATETIME + TEXT_TYPE + COMMA_SEP +
+                DailyFood.COLUMN_FOOD_ID + INTEGER_TYPE + COMMA_SEP +
                 "FOREIGN KEY(" + DailyFood.COLUMN_FOOD_ID + ") REFERENCES "
                 +Food.TABLE_NAME + "(" + Food._ID + ")"+" )";
     }
