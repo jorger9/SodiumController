@@ -12,4 +12,8 @@
     <dimen name="cornerradius_cardview">4dp</dimen>
     <dimen name="height_cardview_food">60dp</dimen>
     <dimen name="heght_divider">1dp</dimen>
+    <dimen name="paddingleft_cardview">15dp</dimen>
+    <dimen name="paddingtop_cardview">5dp</dimen>
+    <dimen name="textsize_cardviewfoodtitle">16sp</dimen>
+    <dimen name="textsize_cardviewfoodtextview">12sp</dimen>
 </resources>

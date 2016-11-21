@@ -11,11 +11,9 @@
         android:layout_height="@dimen/height_cardview_food"
         android:orientation="horizontal"
         android:weightSum="1"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
-        android:layout_marginBottom="10dp"
+        android:paddingLeft="@dimen/paddingleft_cardview"
+        android:paddingTop="@dimen/paddingtop_cardview"
         >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,15 +26,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/foodname_card"
-                android:textSize="16sp"
-                android:textColor="#666666"
+                android:textSize="@dimen/textsize_cardviewfoodtitle"
+                android:textColor="@color/textcolor_textviewcardtitle"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/foodquantity_card"
-                android:textSize="12sp"
+                android:textSize="@dimen/textsize_cardviewfoodtextview"
+                android:textColor="@android:color/darker_gray"
                 />
         </LinearLayout>
 
@@ -55,7 +54,8 @@
                 android:text="@string/sodiumcontent_card"
                 android:layout_weight=".5"
                 android:gravity="center"
-                android:textSize="12sp"
+                android:textSize="@dimen/textsize_cardviewfoodtextview"
+                android:textColor="@android:color/darker_gray"
                 />
             <LinearLayout
                 android:layout_width="match_parent"

@@ -6,4 +6,5 @@
     <color name="TextColorWhite">#FFFFFF</color>
     <color name="colorPrimaryLight">#B2EBF2</color>
     <color name="TextColorBlack">#000000</color>
+    <color name="textcolor_textviewcardtitle">#666666</color>
 </resources>
