@@ -10,4 +10,6 @@
     <dimen name="info_text_size">15sp</dimen>
     <dimen name="height_cardview">100dp</dimen>
     <dimen name="cornerradius_cardview">4dp</dimen>
+    <dimen name="height_cardview_food">60dp</dimen>
+    <dimen name="heght_divider">1dp</dimen>
 </resources>
