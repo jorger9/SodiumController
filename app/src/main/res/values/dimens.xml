@@ -16,4 +16,6 @@
     <dimen name="paddingtop_cardview">5dp</dimen>
     <dimen name="textsize_cardviewfoodtitle">16sp</dimen>
     <dimen name="textsize_cardviewfoodtextview">12sp</dimen>
+    <dimen name="height_cardview_foodgroup">150dp</dimen>
+    <dimen name="width_cardview_foodgroup">150dp</dimen>
 </resources>

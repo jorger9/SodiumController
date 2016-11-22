@@ -61,15 +61,25 @@ public class Restriction extends RealmObject {
         Restriction restriction = new Restriction();
         restriction.setId(id);
         restriction.setRestrinctionName(name);
-        restriction.setUpperLimit(lowerLimit);
-        restriction.setLowerLimit(upperLimit);
+        restriction.setLowerLimit(lowerLimit);
+        restriction.setUpperLimit(upperLimit);
 
         Realm realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
-        realm.copyToRealmOrUpdate(restriction); // Create a new object
+
+        if(!realm.isInTransaction()) realm.beginTransaction();
+
+        realm.copyToRealmOrUpdate(restriction);
 
         realm.commitTransaction();
-        realm.close();
 
+
+        /*realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.copyToRealmOrUpdate(restriction);
+            }
+        });
+
+        realm.close();*/
     }
 }

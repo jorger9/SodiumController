@@ -3,13 +3,13 @@
     <string name="title_activity_refereces">Refereces</string>
     <string name="restrictionChoose">Elija su nivel de restricción</string>
     <string name="low_restriction">Restricción leve</string>
-    <string name="mid_restriction">Restrincción moderada</string>
+    <string name="mid_restriction">Restricción moderada</string>
     <string name="high_restriction">Restricción severa</string>
     <string name="text_button_welcome">Elegir</string>
     <string name="info_text">¿No sabes que nivel elegir?</string>
     <string name="info_click">Consulta aquí</string>
     <string name="low_restriction_info">Restricción leve: entre 900 - 2100mg de consumo de Sodio al día.</string>
-    <string name="mid_restriction_info">Restrincción moderada: entre 500 - 900mg de consumo de Sodio al día.</string>
+    <string name="mid_restriction_info">Restricción moderada: entre 500 - 900mg de consumo de Sodio al día.</string>
     <string name="high_restriction_info">Restricción severa: menos de 500 mg de consumo de Sodio al día.</string>
     <string name="tab_home">Inicio</string>
     <string name="tab_food">Alimentos</string>

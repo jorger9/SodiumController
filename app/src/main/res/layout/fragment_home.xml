@@ -42,7 +42,7 @@
                 android:layout_below="@id/textview_home"
                 />
             <TextView
-                android:id="@+id/begin_bar_indicator"
+                android:id="@+id/lowerlimit_barindicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/begin_bar_indicator"
@@ -50,7 +50,7 @@
                 android:layout_below="@id/progress_bar"
                 />
             <TextView
-                android:id="@+id/end_bar_indicator"
+                android:id="@+id/upperlimit_barindicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/end_bar_indicator"

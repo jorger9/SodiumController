@@ -15,6 +15,15 @@ public class FoodGroup extends RealmObject{
     private String groupName;
     private String groupPicture;
 
+    public FoodGroup(){
+
+    }
+    public FoodGroup(long id, String groupName, String groupPicture) {
+        this.id = id;
+        this.groupName = groupName;
+        this.groupPicture = groupPicture;
+    }
+
     public String getGroupPicture() {
         return groupPicture;
     }
@@ -42,24 +51,39 @@ public class FoodGroup extends RealmObject{
 
     public void loadData()
     {
-        //write("Restricción leve",900,2100);
-        //write("Restricción moderada",500,900);
-        //write("Restricción severa",0,500);
+        write(1,"Verduras","vegetables.png");
+        write(2,"Frutas","fruits.png");
+        write(3,"Cereales","cereals.png");
+        write(4,"Carnes y vísceras","animalorigin.png");
+        write(5,"Oleaginosas","oleginosas.png");
+        write(6,"Leguminosas","legumes.png");
+        write(7,"Productos lácteos ","dairyProducts.png");
+        write(8,"Aceites y grasas","oils.png");
+        write(9,"Industrializados","processed.png");
 
     }
 
     private void write(int id, String groupName, String groupPicture){
-        FoodGroup foodGroup = new FoodGroup();
+        final FoodGroup foodGroup = new FoodGroup();
         foodGroup.setId(id);
         foodGroup.setGroupName(groupName);
         foodGroup.setGroupPicture(groupPicture);
 
         Realm realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
+
+        if(!realm.isInTransaction()) realm.beginTransaction();
+
         realm.copyToRealmOrUpdate(foodGroup);
 
         realm.commitTransaction();
-        realm.close();
+        /*realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                realm.copyToRealmOrUpdate(foodGroup);
+            }
+        });
+
+        realm.close();*/
 
     }
 }

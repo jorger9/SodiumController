@@ -9,12 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+
 import com.jorger9.sodiumcontroller.R;
+import com.jorger9.sodiumcontroller.model.UserConfig;
+
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
+
+    private Realm realm;
 
     private ProgressBar progressBar;
     private int progressStatus;
@@ -32,17 +40,36 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        realm = Realm.getDefaultInstance();
+        if(!realm.isInTransaction())realm.beginTransaction();
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         progressBar = (ProgressBar)view.findViewById(R.id.progress_bar);
+        TextView lowerLimit = (TextView)view.findViewById(R.id.lowerlimit_barindicator);
+        TextView upperLimit = (TextView)view.findViewById(R.id.upperlimit_barindicator);
 
-        progressBar.setProgress(20);
-        showToolbar("",false,view);
+        UserConfig UserConfig = realm.where(UserConfig.class).findAll().first();
+
+        lowerLimit.setText(UserConfig.getRestriction().getLowerLimit()+"mg");
+        upperLimit.setText(UserConfig.getRestriction().getUpperLimit()+"mg");
+
+        showToolbar("Home",false,view);
 
         return view;
     }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        realm = Realm.getDefaultInstance();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        realm.close();
+    }
 
     public void showToolbar(String title, boolean upButton, View view){
 

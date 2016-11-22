@@ -15,7 +15,10 @@ public class MyApplication extends Application{
         super.onCreate();
         // The Realm file will be located in Context.getFilesDir() with name "default.realm"
         Realm.init(this);
-        RealmConfiguration config = new RealmConfiguration.Builder().name("sodiumcontroller.realm").schemaVersion(2).build();
+        RealmConfiguration config = new RealmConfiguration.Builder()
+                .name("sodiumcontroller.realm")
+                .schemaVersion(3)
+                .build();
         Realm.setDefaultConfiguration(config);
     }
 }
