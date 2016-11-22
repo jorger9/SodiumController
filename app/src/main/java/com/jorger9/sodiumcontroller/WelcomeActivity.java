@@ -44,12 +44,12 @@ public class WelcomeActivity extends AppCompatActivity {
             RealmQuery<Restriction> query = realm.where(Restriction.class);
             RealmResults<Restriction> result1 = query.findAll();
 
-            Toast.makeText(this,""+result1.size(),Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,""+result1.size(),Toast.LENGTH_LONG).show();
 
             RealmQuery<Food> query2 = realm.where(Food.class);
             RealmResults<Food> result2 = query2.findAll();
 
-            Toast.makeText(this,""+result2.size(),Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,""+result2.size(),Toast.LENGTH_LONG).show();
 
             if (result1.isEmpty()){
 
