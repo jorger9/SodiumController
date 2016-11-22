@@ -22,7 +22,7 @@
             >
 
             <TextView
-                android:id="@+id/foodNameCard"
+                android:id="@+id/foodlistNameCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/foodname_card"
@@ -31,7 +31,7 @@
                 />
 
             <TextView
-                android:id="@+id/foodgrcard"
+                android:id="@+id/foodlistquantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/foodquantity_card"
@@ -49,7 +49,7 @@
             >
 
             <TextView
-                android:id="@+id/sodiumContentCard"
+                android:id="@+id/foodlistsodiumContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sodiumcontent_card"
@@ -67,7 +67,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_delete_column"
+                    android:src="@drawable/plus_grey"
                     android:scaleType="centerCrop"
                     />
             </LinearLayout>

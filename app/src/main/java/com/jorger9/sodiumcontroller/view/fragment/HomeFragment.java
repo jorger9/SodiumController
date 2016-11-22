@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jorger9.sodiumcontroller.R;
 import com.jorger9.sodiumcontroller.model.UserConfig;
@@ -23,23 +24,24 @@ import io.realm.RealmResults;
 public class HomeFragment extends Fragment {
 
     private Realm realm;
-
     private ProgressBar progressBar;
     private int progressStatus;
 
-    @Override
+
+    public HomeFragment() {
+    }
+    /*@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+    }*/
+
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    }
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+        Toast.makeText(getContext(),""+R.drawable.animalorigin,Toast.LENGTH_LONG).show();
+
+
         realm = Realm.getDefaultInstance();
         if(!realm.isInTransaction())realm.beginTransaction();
         // Inflate the layout for this fragment
