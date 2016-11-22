@@ -2,8 +2,12 @@ package com.jorger9.sodiumcontroller.adapter;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +20,7 @@ import com.jorger9.sodiumcontroller.model.Food;
 import com.jorger9.sodiumcontroller.model.FoodGroup;
 
 import com.jorger9.sodiumcontroller.model.FoodGroup;
+import com.jorger9.sodiumcontroller.view.FoodListActivity;
 
 import java.util.ArrayList;
 
@@ -46,7 +51,7 @@ public class FoodGroupAdapterRecyclerView extends RecyclerView.Adapter<FoodGroup
 
     @Override
     public void onBindViewHolder(FoodGroupViewHolder holder, int position) {
-        FoodGroup foodGroup = groups.get(position);
+        final FoodGroup foodGroup = groups.get(position);
         long imageId;
         /* write(1,"Verduras","vegetables.png");
         write(2,"Frutas","fruits.png");
@@ -72,6 +77,16 @@ public class FoodGroupAdapterRecyclerView extends RecyclerView.Adapter<FoodGroup
         int i = Integer.parseInt(""+(foodGroup.getId()-1));
         holder.groupFoodTitle.setText(foodGroup.getGroupName());
         holder.groupFoodImage.setImageResource(a[i]);
+
+        holder.groupFoodImage.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(activity, FoodListActivity.class);
+                intent.putExtra("groupId",foodGroup.getId());
+                activity.startActivity(intent);
+            }
+        });
 
     }
 

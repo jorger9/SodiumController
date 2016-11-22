@@ -23,8 +23,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".WelcomeActivity" />
         </activity>
+
+        <activity
+            android:name=".view.FoodListActivity"
+            android:parentActivityName=".view.ContainerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.ContainerActivity" />
+        </activity>
         <activity android:name=".view.ContainerActivity" />
-        <activity android:name=".view.FoodListActivity"></activity>
     </application>
 
 </manifest>

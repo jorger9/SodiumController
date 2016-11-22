@@ -39,8 +39,6 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        Toast.makeText(getContext(),""+R.drawable.animalorigin,Toast.LENGTH_LONG).show();
-
 
         realm = Realm.getDefaultInstance();
         if(!realm.isInTransaction())realm.beginTransaction();
