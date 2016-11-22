@@ -1,4 +1,5 @@
 package com.jorger9.sodiumcontroller.db;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -38,4 +39,18 @@ public class DbHelper extends SQLiteOpenHelper{
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }
+
+
+    /*private void initData()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+// Create a new map of values, where column names are the keys
+        ContentValues values = new ContentValues();
+        values.put(DBContract.FoodGroup.COLUMN_GROUP_NAME, "Frutas");
+        values.put(FeedEntry.COLUMN_NAME_SUBTITLE, subtitle);
+
+// Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(FeedEntry.TABLE_NAME, null, values);
+    }*/
 }
