@@ -23,5 +23,7 @@
     <string name="begin_bar_indicator">0mg</string>
     <string name="end_bar_indicator">200mg</string>
     <string name="foodquantity_card">100gramos</string>
-    <string name="textview_food_list">Alimentos consumidos el dìa de hoy</string>
+    <string name="textview_food_list">Alimentos consumidos hoy</string>
+    <string name="hint_gramsquantity">Cantidad en gramos</string>
+    <string name="text_button_addfood">Agregar</string>
 </resources>

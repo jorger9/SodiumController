@@ -34,5 +34,15 @@
         <item name="android:textColor">@color/TextColorBlack</item>
     </style>
 
+    <style name="EditTextWhite" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@color/editTextColorGrey</item>
+        <item name="android:textSize">@dimen/edittext_textsize_addfood</item>
+        <item name="android:textColorPrimary">@color/editTextColorGrey</item>
+        <item name="colorAccent">@color/editTextColorGrey</item>
+        <item name="colorControlNormal">@color/editTextColorGrey</item>
+        <item name="colorControlActivated">@color/editTextColorGrey</item>
+    </style>
+
+
 
 </resources>

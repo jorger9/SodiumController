@@ -19,6 +19,9 @@ import io.realm.RealmResults;
 
 public class FoodListActivity extends AppCompatActivity {
     private Realm realm;
+    private String toolBarTitle;
+    private RecyclerView recyclerView;
+    private long groupID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,29 +31,58 @@ public class FoodListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_list);
 
         Intent intent = getIntent();
-        long groupID = intent.getLongExtra("groupId",0);
+         groupID = intent.getLongExtra("groupId",0);
 
-        showToolbar("Grupos Alimenticios",true);
-
-        RecyclerView foodListRecycler = (RecyclerView) findViewById(R.id.foodListRecycler);
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getBaseContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        if(!realm.isInTransaction()) realm.beginTransaction();
 
 
-        foodListRecycler.setLayoutManager(linearLayoutManager);
+        toolBarTitle  = groupID==0 ?  "Lista de alimentos" : realm.where(FoodGroup.class).equalTo("id",groupID).findFirst().getGroupName();
 
-        FoodListAdapterRecyclerView foodListAdapterRecyclerView =
-                new FoodListAdapterRecyclerView(buildFoods(groupID), R.layout.cardview_foodlist, this);
-        foodListRecycler.setAdapter(foodListAdapterRecyclerView);
+        showToolbar(toolBarTitle,true);
+
+        recyclerView = (RecyclerView) findViewById(R.id.foodListRecycler);
+        setUpRecyclerView();
+
     }
 
+
+    public void setUpRecyclerView(){
+
+        ArrayList<Food> foodList ;
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getBaseContext());
+
+        foodList = groupID == 0 ? buildFoods() : buildFoods(groupID);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+
+        FoodListAdapterRecyclerView foodListAdapterRecyclerView =
+                new FoodListAdapterRecyclerView(foodList, R.layout.cardview_foodlist, this);
+        recyclerView.setAdapter(foodListAdapterRecyclerView);
+
+    }
+
+    public ArrayList<Food> buildFoods(){
+        ArrayList<Food> foods = new ArrayList<>();
+
+        if(!realm.isInTransaction()) realm.beginTransaction();
+
+        RealmResults<Food> results = realm.where(Food.class).findAll().sort("foodName");
+
+        for (Food food :results) {
+            foods.add(food);
+
+        }
+
+        return  foods;
+    }
     public ArrayList<Food> buildFoods(long groupID){
         ArrayList<Food> foods = new ArrayList<>();
 
         if(!realm.isInTransaction()) realm.beginTransaction();
 
-        RealmResults<Food> results = realm.where(Food.class).equalTo("foodGroup.id",groupID).findAll();
+        RealmResults<Food> results = realm.where(Food.class).equalTo("foodGroup.id",groupID).findAll().sort("foodName");
 
         for (Food food :results) {
             foods.add(food);
@@ -72,5 +104,14 @@ public class FoodListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
+    }
+
+    public void goToAddDailyFood(Food food){
+        Intent intent = new Intent(this,AddDailyFoodActivity.class);
+
+        intent.putExtra("foodId",food.getId());
+
+        startActivity(intent);
+
     }
 }

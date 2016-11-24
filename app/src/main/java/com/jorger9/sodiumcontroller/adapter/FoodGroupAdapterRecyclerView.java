@@ -3,28 +3,19 @@ package com.jorger9.sodiumcontroller.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
-import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.jorger9.sodiumcontroller.R;
-import com.jorger9.sodiumcontroller.model.Food;
-import com.jorger9.sodiumcontroller.model.FoodGroup;
-
 import com.jorger9.sodiumcontroller.model.FoodGroup;
 import com.jorger9.sodiumcontroller.view.FoodListActivity;
 
 import java.util.ArrayList;
 
-import io.realm.RealmRecyclerViewAdapter;
 
 /**
  * Created by jorger9 on 11/22/16.
@@ -97,8 +88,6 @@ public class FoodGroupAdapterRecyclerView extends RecyclerView.Adapter<FoodGroup
     class FoodGroupViewHolder extends RecyclerView.ViewHolder {
         public ImageView groupFoodImage;
         public TextView groupFoodTitle;
-
-
 
 
         public FoodGroupViewHolder(View view) {

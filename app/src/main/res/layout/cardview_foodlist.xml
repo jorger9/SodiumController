@@ -12,7 +12,7 @@
         android:orientation="horizontal"
         android:weightSum="1"
         android:paddingLeft="@dimen/paddingleft_cardview"
-        android:paddingTop="@dimen/paddingtop_cardview"
+        android:paddingTop="@dimen/activity_vertical_margin"
         >
         <LinearLayout
             android:layout_width="match_parent"
