@@ -13,6 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -45,6 +46,7 @@ public class HomeFragment extends Fragment {
     private TextView lowerLimit;
     private TextView upperLimit;
     private TextView total;
+    private View view;
 
     private RecyclerView recyclerView;
 
@@ -63,7 +65,7 @@ public class HomeFragment extends Fragment {
 
         realm = Realm.getDefaultInstance();
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
         progressBar = (ProgressBar)view.findViewById(R.id.progress_bar);
         lowerLimit = (TextView)view.findViewById(R.id.lowerlimit_barindicator);
         upperLimit = (TextView)view.findViewById(R.id.upperlimit_barindicator);
@@ -78,6 +80,7 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
 
 
     @Override
@@ -99,7 +102,9 @@ public class HomeFragment extends Fragment {
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(title);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);
+
     }
+
 
     public void setUpRecyclerView(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -125,7 +130,7 @@ public class HomeFragment extends Fragment {
 
         UserConfig UserConfig = realm.where(UserConfig.class).findAll().last();
 
-        lLimit =UserConfig.getRestriction().getLowerLimit();
+        lLimit =0;
         uLimit = UserConfig.getRestriction().getUpperLimit();
         Calendar today = Calendar.getInstance();
 
@@ -142,8 +147,8 @@ public class HomeFragment extends Fragment {
         }
 
         total.setText(new DecimalFormat("##.##").format(consum)+"mg de sodio");
-        limitSize = uLimit-lLimit;
-        consum = consum-lLimit;
+         limitSize = uLimit-lLimit;
+        //consum = consum-lLimit;
 
         progressStatus = (consum * 100)/limitSize;
 
